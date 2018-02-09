@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../styles/header.scss';
-import {NavLink, Switch, Route} from 'react-router-dom';
-import HomePage from '../home/HomePage';
+import {NavLink} from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -9,12 +8,9 @@ const Header = () => {
         <div>
             <ul>
                 <li><NavLink exact to="/" activeClassName="active">Home</NavLink></li>
-                <li><NavLink to="/Menu_item2" activeClassName="active">Menu 2</NavLink></li>
+                <li><NavLink to="/new_expense" activeClassName="active">New Expense</NavLink></li>
                 <li><NavLink to="/Menu_item3" activeClassName="active">Menu 3</NavLink></li>
             </ul>
-            <Switch>
-                <Route exact path="/" component={HomePage} />
-            </Switch>    
         </div>
     );
 };

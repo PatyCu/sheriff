@@ -11,7 +11,10 @@ const HomePage = () => {
         <div className="container">
             <Title>Hello World!</Title>
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis sodales enim non lobortis. Donec lacinia dolor in sodales pretium. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            </p>
+            <p>
+            Donec mattis sodales enim non lobortis. Donec lacinia dolor in sodales pretium. 
             Pellentesque imperdiet ipsum sed vestibulum posuere. Nulla sagittis rutrum lectus, vitae volutpat justo. Proin dignissim ultrices consectetur. 
             Mauris lorem sapien, hendrerit vitae elit vel, accumsan faucibus mauris. Sed non lorem vel metus dignissim convallis consequat ac tellus. 
             Maecenas ullamcorper venenatis libero, vel egestas turpis gravida id. Nullam nec consectetur nibh. Aenean eleifend quam vel consectetur vestibulum. 
