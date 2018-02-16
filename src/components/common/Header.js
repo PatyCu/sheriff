@@ -21,7 +21,7 @@ const Header = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
-                    <li><NavLink exact to="/" activeClassName="active">Home</NavLink></li>
+                    <li><NavLink exact to="/" activeClassName="active">Trips</NavLink></li>
                     <li><NavLink to="/new_expense" activeClassName="active">New Expense</NavLink></li>
                     <li><NavLink to="/Menu_item3" activeClassName="active">Menu 3</NavLink></li>
                 </ul>

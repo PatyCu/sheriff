@@ -9,7 +9,7 @@ export function loadTripsSucess(trips) {
 export function loadTrips() {
     return function(dispatch) {
         dispatch(beginAjaxCall());
-        return tripApi.getAllTrips.then( trips => {
+        return tripApi.getAllTrips().then( trips => {
             dispatch(loadTripsSucess(trips));
         }).catch(error => {
             dispatch(ajaxCallError);
