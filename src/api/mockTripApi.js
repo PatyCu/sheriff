@@ -5,36 +5,43 @@ const trips = [
     {
         id: "donostia",
         name: "San Sebastian",
+        description: "",
         coverPhoto: "donostia.jpg"
     },
     {
         id: "indonesia",
         name: "Indonesia",
+        description: "",        
         coverPhoto: "indonesia.jpg"
     },
     {
         id: "laos",
         name: "Cambodia and Laos",
+        description: "",
         coverPhoto: "laos.jpg"
     },
     {
         id: "oporto",
         name: "Oporto",
+        description: "",
         coverPhoto: "oporto.jpg"
     },
     {
         id: "pirineus",
         name: "Els Pirineus",
+        description: "",
         coverPhoto: "pirineus.jpg"
     },
     {
         id: "porrera",
         name: "Porrera",
+        description: "",
         coverPhoto: "porrera.jpg"
     },
     {
         id: "priorat",
         name: "Priorat i Vall Llach",
+        description: "",
         coverPhoto: "priorat.jpg"
     },
 ];
