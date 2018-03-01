@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
+
+.alpha { 
+    background-color: #4CAF50; 
+    border-color: #4CAF50;
+}
 
 body {
     margin:0;

@@ -5,9 +5,11 @@ import configureStore, { history } from './store/configureStore';
 import Root from './components/Root';
 
 import './styles/styles.scss';
+import {loadTrips} from './actions/tripActions';
 require('./favicon.ico');
 
 const store = configureStore();
+store.dispatch(loadTrips());
 
 
 render (
