@@ -17,7 +17,7 @@ const expenses = [
 
 const generateId = (expense) => {
     return (expense.tripId + "_" + expenses.length);
-};
+}; 
 
 class ExpenseApi {
 
@@ -35,26 +35,17 @@ class ExpenseApi {
     static saveExpense(expense) {
         return new Promise( (resolve, reject) => {
             setTimeout( () => {
+                if (!expense.id){
+                    expense.id = generateId(expense);                    
+                } 
+                const existingExpenseIndex = expenses.findIndex(a => a.id == expense.id);
+                if (existingExpenseIndex > -1) {
+                    reject(`The ID ${expense.id} for this expense already exists in the DB`);                                        
+                }  else {
+                    expenses.push(expense);       
+                }              
 
-                if (expense.id) {
-                    // we have an id (new or not)
-                    const existingExpenseIndex = expenses.findIndex(a => a.id == expense.id);
-                    //if (existingExpenseIndex > -1) {
-                        expenses.splice(existingExpenseIndex, 1, expense);
-                    //} else {
-                    //    expenses.push(expense);                  
-                    //}
-                } else {
-                    expense.id = generateId(expense);
-                    const existingExpenseIndex = expenses.findIndex(a => a.id == expense.id);
-                    if (existingExpenseIndex > -1) {
-                        reject(`The ID ${expense.id} for this expense already exists in the DB`);                                        
-                    }
-
-                    expenses.push(expense);
-                }
-
-                resolve(Object.assign({}, expenses));
+                resolve(Object.assign([], expenses));
             }, delay);
         });
     }

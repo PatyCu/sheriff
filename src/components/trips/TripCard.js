@@ -2,6 +2,8 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+//TO-DO: connectar-ho a redux i afegir les expenses del trip al state
+
 const TripCard = ({trip}) => {
     return (
         <div className="col">

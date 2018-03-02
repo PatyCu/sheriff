@@ -3,9 +3,9 @@ import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import configureStore, { history } from './store/configureStore';
 import Root from './components/Root';
+import {loadTrips} from './actions/tripActions';
 
 import './styles/styles.scss';
-import {loadTrips} from './actions/tripActions';
 require('./favicon.ico');
 
 const store = configureStore();
