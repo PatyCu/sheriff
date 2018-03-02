@@ -1,20 +1,7 @@
 import delay from './delay';
 import {setTimeout} from 'timers';
+import {CURRENCIES, EXPENSE_TITLES} from './expenseDefinitions';
 
-const EXPENSE_TITLES = {
-    TICKETS: "tickets",
-    HOTEL: "hotel",
-    TRANSPORTATION: "transportation",
-    LUNCH: "lunch",
-    DRINKS: "drinks",
-    GAZ: "gaz"
-};
-
-const CURRENCIES = {
-    EUR: "€",
-    USD: "$",
-    GBP: "£"
-};
 
 const expenses = [
     {
@@ -48,13 +35,15 @@ class ExpenseApi {
     static saveExpense(expense) {
         return new Promise( (resolve, reject) => {
             setTimeout( () => {
+
                 if (expense.id) {
+                    // we have an id (new or not)
                     const existingExpenseIndex = expenses.findIndex(a => a.id == expense.id);
-                    if (existingExpenseIndex > -1) {
+                    //if (existingExpenseIndex > -1) {
                         expenses.splice(existingExpenseIndex, 1, expense);
-                    } else {
-                        reject(`The ID ${expense.id} for this expense doesn't exist in the DB`);                    
-                    }
+                    //} else {
+                    //    expenses.push(expense);                  
+                    //}
                 } else {
                     expense.id = generateId(expense);
                     const existingExpenseIndex = expenses.findIndex(a => a.id == expense.id);
@@ -65,7 +54,7 @@ class ExpenseApi {
                     expenses.push(expense);
                 }
 
-                resolve(Object.assign({}, expense));
+                resolve(Object.assign({}, expenses));
             }, delay);
         });
     }
