@@ -9,11 +9,10 @@ const Main = () => (
     <main>
         <Switch>
             <Route exact path="/" component={TripsPage} />
-            <Route path="/new_expense/:id" component={NewExpense} />             
             <Route path="/new_expense" component={NewExpense} />
+            <Route path="/new_expense/:id" component={NewExpense} />                         
             <Route path="/newtrip" component={NewTrip} />               
-            <Route path="/trip_expenses/:id" component={ManageExpenses} />                             
-            <Route path="/trip_expenses" component={NewTrip} />                    
+            <Route path="/trip_expenses/:id" component={ManageExpenses} />                                         
         </Switch>
     </main>
 );

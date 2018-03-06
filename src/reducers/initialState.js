@@ -1,3 +1,4 @@
 export default {
-    trips: []
+    trips: [],
+    expenses: []
 };

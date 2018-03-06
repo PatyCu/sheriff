@@ -26,7 +26,8 @@ NewExpense.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-    let tripId = ownProps.location.pathname.slice(13);
+    //let tripId = ownProps.location.pathname.slice(13);
+    let tripId = ownProps.match.params.id;
 
     if (tripId.length == 0 || tripId == isNullOrUndefined) {
         tripId = "no_trip_field";
