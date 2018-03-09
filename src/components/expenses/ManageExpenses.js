@@ -4,7 +4,7 @@ import * as expenseActions from '../../actions/expenseActions';
 import { bindActionCreators } from 'redux';
 import {NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import ExpenseDetail from './ExpenseDetail';
+import ExpenseList from './ExpenseList';
 
 class ManageExpenses extends React.Component {
     constructor(props, context) {
@@ -21,8 +21,8 @@ class ManageExpenses extends React.Component {
         
         return (
             <div className="container">        
-                <h1>Manage Expenses!</h1>
-                {expenses.map( expense => <ExpenseDetail key={expense.id} expense={expense} />)}
+                <h1>{trip_name} expenses:</h1>
+                {expenses.map( expense => <ExpenseList key={expense.id} expense={expense} />)}    
                 <p className="btn btn-primary alpha"><NavLink to={`/new_expense/${trip_name}`}>+</NavLink></p>                
             </div>
         );

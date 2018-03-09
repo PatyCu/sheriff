@@ -6,12 +6,21 @@ import {CURRENCIES, EXPENSE_TITLES} from './expenseDefinitions';
 const expenses = [
     {
         id: "donostia_0",
-        tripId: "donostia",
+        tripId: "Donostia",
         payUsers: ["paty", "thor","ryan"],
         amount: 100,
         currency: CURRENCIES.EUR,
         title: EXPENSE_TITLES.TRANSPORTATION,
         description: "plane tickets Bcn - Lisboa"
+    },
+    {
+        id: "donostia_1",
+        tripId: "Donostia",
+        payUsers: ["paty"],
+        amount: 30,
+        currency: CURRENCIES.EUR,
+        title: EXPENSE_TITLES.DRINKS,
+        description: "afternoon beers"
     }
 ];
 

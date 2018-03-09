@@ -1,0 +1,83 @@
+.NewExpense iframe  {
+    width: calc(100vw - 20px);
+    height: calc(100vh - 5px);
+    border: none;
+  }
+
+  blockquote{
+    display:block;
+    background: #fff;
+    padding: 10px 20px 10px 45px;
+    margin: 0;
+    position: relative;
+    
+    /*Font*/
+    font-family: Georgia, serif;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #666;
+  
+    /*Box Shadow - (Optional)*/
+    -moz-box-shadow: 2px 2px 15px #ccc;
+    -webkit-box-shadow: 2px 2px 15px #ccc;
+    box-shadow: 2px 2px 15px #ccc;
+  
+    /*Borders - (Optional)*/
+    border-left-style: solid;
+    border-left-width: 15px;
+    border-right-style: solid;
+    border-right-width: 2px;    
+  }
+  
+  blockquote::before{
+    content: "\201C"; /*Unicode for Left Double Quote*/
+    
+    /*Font*/
+    font-family: Georgia, serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: #999;
+    
+    /*Positioning*/
+    position: absolute;
+    left: 10px;
+    top:5px;
+    
+  }
+  
+  blockquote::after{
+    /*Reset to make sure*/
+    content: "";
+  }
+  
+  blockquote a{
+    text-decoration: none;
+    background: #eee;
+    cursor: pointer;
+    padding: 0 3px;
+    color: #c76c0c;
+  }
+  
+  blockquote a:hover{
+   color: #666;
+  }
+  
+  blockquote em{
+    font-style: italic;
+  }
+  
+    /*Default Color Palette*/
+  blockquote.default{ 
+    border-left-color: #656d77;
+    border-right-color: #434a53;  
+  }
+
+  /*Grass Color Palette*/
+blockquote.grass{
+  border-left-color: #9fd477;
+  border-right-color: #8bc163;
+}
+
+span.Cgrass{
+  color:#8bc163;
+}

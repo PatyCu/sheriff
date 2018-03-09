@@ -5,7 +5,7 @@ import {CURRENCIES, EXPENSE_TITLES} from './expenseDefinitions';
 describe('Mock Expenses API', () => {
     const newExpense = {
         id: "donostia_1",
-        tripId: "donostia",
+        tripId: "Donostia",
         payUsers: ["paty"],
         amount: 30,
         currency: CURRENCIES.EUR,
@@ -15,7 +15,7 @@ describe('Mock Expenses API', () => {
 
     const existingExpense = {
         id: "donostia_0",
-        tripId: "donostia",
+        tripId: "Donostia",
         payUsers: ["paty"],
         amount: 30,
         currency: CURRENCIES.EUR,
@@ -30,12 +30,11 @@ describe('Mock Expenses API', () => {
     });
 
     it('Should save a new expense', () => {
-        
         ExpenseApi.getAllExpenses().then( expenses => {
-            expect(expenses.length).toBeGreaterThan(0);
-            expect(expenses.length).toEqual(1);    
+            const expensesLength = expenses.length;
+            expect(expensesLength).toBeGreaterThan(0);
             ExpenseApi.saveExpense(newExpense).then(expenses => {
-                expect(expenses.length).toEqual(2);
+                expect(expenses.length).toEqual((expensesLength+1));
             });   
         });
     });
@@ -43,11 +42,12 @@ describe('Mock Expenses API', () => {
     
     it('Should not save a duplicated expense', () => {
         ExpenseApi.getAllExpenses().then( expenses => {
-            expect(expenses.length).toEqual(1);            
+            const expensesLength = expenses.length;
+            expect(expensesLength).toBeGreaterThan(0);           
             ExpenseApi.saveExpense(newExpense).then( expenses => {
-                expect(expenses.length).toEqual(1);
+                expect(expenses.length).toEqual((expensesLength+1));
                 ExpenseApi.saveExpense(existingExpense).then( expenses => {
-                    expect(expenses.length).toEqual(1);
+                    expect(expenses.length).toEqual((expensesLength+1));
                 });
             }).catch(error => {
                 expect(error).toEqual(`The ID donostia_1 for this expense already exists in the DB`);
