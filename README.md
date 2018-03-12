@@ -1,4 +1,4 @@
-##SHERIFF
+## SHERIFF
 
 A webapp built in React to share expenses while you travel.
 
