@@ -10,7 +10,7 @@ const TripCard = ({trip}) => {
                 <div className="card-body">
                     <h5 className="card-title">{trip.name}</h5>
                     <p className="card-text">{trip.description}</p>
-                    <p className="btn btn-primary alpha"><NavLink to={`/trip_expenses/${trip.id}`}>Go somewhere</NavLink></p>
+                    <p className="btn btn-primary alpha"><NavLink to={`/trip_expenses/${trip.id}`}>Add expenses</NavLink></p>
                 </div>
             </div>
             <p>&nbsp;</p>                    

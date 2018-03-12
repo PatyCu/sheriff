@@ -5,7 +5,7 @@ import {CURRENCIES, EXPENSE_TITLES} from './expenseDefinitions';
 describe('Mock Expenses API', () => {
     const newExpense = {
         id: "donostia_1",
-        tripId: "Donostia",
+        tripId: "donostia",
         payUsers: ["paty"],
         amount: 30,
         currency: CURRENCIES.EUR,
@@ -15,7 +15,7 @@ describe('Mock Expenses API', () => {
 
     const existingExpense = {
         id: "donostia_0",
-        tripId: "Donostia",
+        tripId: "donostia",
         payUsers: ["paty"],
         amount: 30,
         currency: CURRENCIES.EUR,
@@ -26,6 +26,18 @@ describe('Mock Expenses API', () => {
     it('Should load all expenses', () => {
         ExpenseApi.getAllExpenses().then( expenses => {
             expect(expenses.length).toBeGreaterThan(0);        
+        });
+    });
+
+    it('Should filter all the expenses of a certain trip', () => {
+        let totalExpenses = 0;
+        ExpenseApi.getAllExpenses().then( expenses => {
+            totalExpenses = expenses.length;
+            expect(totalExpenses).toBeGreaterThan(0);        
+        });
+        ExpenseApi.getExpensesByTrip("indonesia").then( expenses => {
+            expect(expenses.length).toBeLessThan(totalExpenses);
+            expect(expenses.length).toEqual(1);
         });
     });
 

@@ -6,7 +6,7 @@ import {CURRENCIES, EXPENSE_TITLES} from './expenseDefinitions';
 const expenses = [
     {
         id: "donostia_0",
-        tripId: "Donostia",
+        tripId: "donostia",
         payUsers: ["paty", "thor","ryan"],
         amount: 100,
         currency: CURRENCIES.EUR,
@@ -15,12 +15,21 @@ const expenses = [
     },
     {
         id: "donostia_1",
-        tripId: "Donostia",
+        tripId: "donostia",
         payUsers: ["paty"],
         amount: 30,
         currency: CURRENCIES.EUR,
         title: EXPENSE_TITLES.DRINKS,
         description: "afternoon beers"
+    },
+    {
+        id: "indonesia_0",
+        tripId: "indonesia",
+        payUsers: ["paty"],
+        amount: 1200,
+        currency: CURRENCIES.EUR,
+        title: EXPENSE_TITLES.TRANSPORTATION,
+        description: "plain tickets, return trip Barcelona - Bali"
     }
 ];
 
@@ -35,6 +44,18 @@ class ExpenseApi {
             setTimeout( () => {
                 resolve(Object.assign([], expenses));
                 if (expenses.length == 0) {
+                    reject(`No expenses to load`);
+                }
+            }, delay);
+        });
+    }
+
+    static getExpensesByTrip(tripId) {
+        return new Promise ( (resolve, reject) => {
+            setTimeout( () => {
+                const tripExpenses = expenses.filter(expense => expense.tripId == tripId);
+                resolve(Object.assign([], tripExpenses));
+                if(tripExpenses.length == 0){
                     reject(`No expenses to load`);
                 }
             }, delay);

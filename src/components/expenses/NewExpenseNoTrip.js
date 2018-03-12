@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/NewExpense.scss';
+import '../../styles/expenses.scss';
 
 
 const NewExpenseNoTrip = () => {

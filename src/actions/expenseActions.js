@@ -17,3 +17,15 @@ export function loadExpenses() {
         });
     };
 }
+
+export function loadTripExpenses(tripId) {
+    return function(dispatch) {
+        dispatch(beginAjaxCall());
+        return expenseApi.getExpensesByTrip(tripId).then( expenses => {
+            dispatch(loadExpensesSuccess(expenses));
+        }).catch(error => {
+            dispatch(ajaxCallError());
+            throw (error);
+        });
+    };
+}

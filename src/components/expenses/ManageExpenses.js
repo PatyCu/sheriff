@@ -9,10 +9,14 @@ import ExpenseList from './ExpenseList';
 class ManageExpenses extends React.Component {
     constructor(props, context) {
         super(props, context);
+        this.state = {
+            expenses:  [],
+            trip_name: ''
+        };
     }
 
     componentDidMount() {
-        this.props.actions.loadExpenses();        
+        this.props.actions.loadTripExpenses(this.props.trip_name);   
     }
 
     render() {
