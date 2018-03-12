@@ -12,7 +12,7 @@ A webapp built in React to share expenses while you travel.
 
 ## Technologies
 
-Bootstrapped from za href="https://github.com/coryhouse/react-slingshot/">Cory House's React Slingshot</a>.
+Bootstrapped from <a href="https://github.com/coryhouse/react-slingshot/">Cory House's React Slingshot</a>.
 
 | **Tech** | **Description** |**Learn More**|
 |----------|-------|---|
