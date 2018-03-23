@@ -5,9 +5,21 @@ import '../../styles/expenses.scss';
 
 const ExpenseList = ({expense}) => {
     return (
-        <blockquote className="grass">
-            <span className="Cgrass">{expense.title}</span> - <strong>{expense.amount}{expense.currency}</strong><br />
-            {expense.description}
+        <blockquote className="expenselist">
+            <div className="row">
+                <div className="col-3">
+                    <div className="expensedescription">
+                    <span className="expensetitle">{expense.title}</span><br />
+                    {expense.description}
+                    </div>
+                </div>
+                <div className="col-1">
+                    <span className="expenseamount">{expense.amount}{expense.currency}</span>
+                </div>
+                <div className="col">
+                    <img className="expensedetail" src="../../images/eye_icon.png" alt="View Expense details" />
+                </div>
+            </div>            
         </blockquote>        
     );
 };

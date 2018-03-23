@@ -7,7 +7,7 @@
   blockquote{
     display:block;
     background: #fff;
-    padding: 10px 20px 10px 45px;
+    padding: 10px 20px 10px 60px;
     margin: 0;
     position: relative;
     
@@ -73,11 +73,27 @@
   }
 
   /*Grass Color Palette*/
-blockquote.grass{
+blockquote.expenselist{
   border-left-color: #9fd477;
   border-right-color: #8bc163;
 }
 
-span.Cgrass{
+.expensedescription{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+span.expensetitle{
   color:#8bc163;
+}
+
+span.expenseamount {
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 2em;
+}
+
+img.expensedetail {
+  margin-left: 10px;
 }

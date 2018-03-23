@@ -29,7 +29,7 @@ class TripsPage extends React.Component {
                     <Title>Choose a trip to start adding expenses!</Title>
                 </div>
                 <div className="row">
-                    {<TripCard trip={{id:"no_trip_field", name:"Add a new trip", description:"", coverPhoto: "sheriff_badge.png"}} />}            
+                    {<TripCard trip={{id:"no_trip_field", name:"New trip", description:"", coverPhoto: "sheriff_badge.png"}} />}            
                     {trips.map( trip => <TripCard key={trip.id} trip={trip} />)}
                 </div>
             </div>

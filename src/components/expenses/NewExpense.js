@@ -15,7 +15,7 @@ class NewExpense extends React.Component {
         const {trip_name} = this.props;
         return (
             <div className="NewExpense">
-                <iframe title="new_menu" id="typeform-full" src={`https://patycu.typeform.com/to/gHvLHD?trip_name=${trip_name}`}>new expense</iframe>
+                <iframe className="embed-responsive-item" title="new_menu" id="typeform-full" src={`https://patycu.typeform.com/to/gHvLHD?trip_name=${trip_name}`}>new expense</iframe>
             </div>
         );
     }    
